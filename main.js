@@ -1,15 +1,15 @@
 $(function() {
 
-var power = null;
+// var power = null;
 // var changeColor = []
 
 // select the lake button
 $('.power').click(function(){
-	$('.selected').removeClass('selected')
-	$(this).addClass('selected')
-	power = $(this).attr('data-power')
+	$('.selected').removeClass('selected') //remove added class from any other buttons with the class
+	$(this).addClass('selected') // adds class to the clicked item. this adds a border so visibly shows the selection upon click
+	power = $(this).attr('data-power')// takes the attribute of the clicked item and assigns it the the variable 'power'
 		console.log('select')	
-		return false
+		// return false
 
 		// should work only when that main button is selected
 
@@ -18,15 +18,17 @@ $('.power').click(function(){
 
 });
 		
-
+// this click handler will add a new class for the color according to the current value of the variable power, declared inthe function above on any #land item clicked
 		$('.btn-default').click(function(){
-			// $(this).addClass('selected')
-			console.log(power)
+
+			// console.log(power)
 			if (power === 'water'){
 				$(this).addClass('btn-info')
+				console.log('used water')
 			}
 			else if (power === 'fire'){
 				$(this).addClass('btn-danger')
+				console.log('used fire')
 			}
 
 		});
